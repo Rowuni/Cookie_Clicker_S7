@@ -1,0 +1,54 @@
+/* Styles globaux pour les options */
+
+:root {
+  --animation-duration: 0.3s;
+  --transition-duration: 0.3s;
+  --sound-volume: 0.5;
+}
+
+/* Styles pour désactiver les animations */
+.no-animations *,
+.no-animations *::before,
+.no-animations *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  transition-delay: 0.01ms !important;
+}
+
+.no-animations {
+  scroll-behavior: auto !important;
+}
+
+/* Styles responsifs pour les options */
+@media (max-width: 768px) {
+  .options-panel {
+    font-size: 0.9rem;
+  }
+  
+  .option-section {
+    padding: 10px;
+  }
+  
+  .action-button {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Styles pour l'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .no-animations *,
+  .no-animations *::before,
+  .no-animations *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0.01ms !important;
+  }
+}
+
+/* Variables CSS personnalisées utilisées par les composants */
+html[data-particles-enabled="false"] .cookie-container .click-particle {
+  display: none !important;
+}
